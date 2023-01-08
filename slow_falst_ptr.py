@@ -44,7 +44,6 @@ def find_mid_node_v2(root):
             fast = fast.next.next
 
 
-
 mid = find_mid_node_v2(nodes[0])
 print(mid.val)
 
