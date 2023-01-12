@@ -86,24 +86,24 @@ def prim(nodes_dict, edges_dict):
                     edges_visited.add((edge.fromm, edge.to))
                     q.put((edge.weight, edge))
 
-            # 初始化了最小weight的边集
+            # 初始化出发点的的边集 完毕
+
             while not q.empty():
                 weight, edge = q.get()
-                results.append((edge.fromm.value, edge.to.value))
                 print(edge.fromm.value, edge.to.value, edge.weight)
                 next_node = edge.to
                 if next_node not in visited:
-                    # results.append(next_node)
+                    results.append((edge.fromm.value, edge.to.value))
+
                     visited.add(next_node)
-                    print('debug', next_node.value)
                     for next_edge in next_node.edges:
                         if check_edge_not_visited(next_edge):
-                            print('not visited', next_edge.fromm.value, next_edge.to.value, next_edge.weight, next_edge)
+                            # print('not visited', next_edge.fromm.value, next_edge.to.value, next_edge.weight, next_edge)
                             edges_visited.add((next_edge.fromm, next_edge.to))
                             q.put((next_edge.weight, next_edge))
                 # print(q.qsize())
     for edge in results:
-        print(edge[0], edge[1], end='***')
+        print(edge[0]+','+edge[1], end='\t\t')
 
 
 
