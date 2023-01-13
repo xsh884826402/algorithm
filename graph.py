@@ -27,18 +27,10 @@ def init_graph():
              ['a', 'd'],
              ['c', 'e']]
 
-def init_graph_with_weight():
+
+def init_graph_with_weight(graph):
     nodes_dict = {}
     edges_dict = {}
-    graph = [
-                ['a', 'b', 10],
-                ['a', 'c', 8],
-                ['a', 'd', 5],
-                ['b', 'd', 3],
-                ['c', 'd', 2],
-                ['b', 'e', 100],
-                ['d', 'e', 10]
-             ]
     for line in graph:
         node1, node2, weight = line
         # 创建点
@@ -110,15 +102,56 @@ def prim(nodes_dict, edges_dict):
 
 
 
-
-
-
 # 最小生成树 克鲁斯卡尔算法
 def k():
     pass
 
 
+# 迪杰斯特拉算法
+def d(node):
+    # 构造距离dict
+    distance_dict = dict()
+    nodes_visited = set()
+
+    distance_dict[node] = 0
+    nodes_visited.add(node)
+
+    def find_next_node():
+        node_distance_tuple = [[key, value] for key, value in distance_dict.items()]
+        node_distance_tuple_sorted = sorted(node_distance_tuple, key=lambda x: x[1])
+        for key, value in node_distance_tuple_sorted:
+            if key not in nodes_visited:
+                return key
+        return None
+
+    while node:
+        # print('loop', node.value)
+        for edge in node.edges:
+            current_value = distance_dict[node]
+            if edge.to not in nodes_visited:
+                if edge.to not in distance_dict:
+                    distance_dict[edge.to] = current_value + edge.weight
+                else:
+                    distance_dict[edge.to] = min(current_value + edge.weight, distance_dict[edge.to])
+
+        node = find_next_node()
+        nodes_visited.add(node)
+
+    for k,v in distance_dict.items():
+        print(k.value, v)
+
+
 if __name__ == '__main__':
-    nodes, edges = init_graph_with_weight()
-    prim(nodes, edges)
+    graph = [
+        ['a', 'b', 10],
+        ['a', 'c', 8],
+        ['a', 'd', 5],
+        ['b', 'd', 3],
+        ['c', 'd', 2],
+        ['b', 'e', 2],
+        ['d', 'e', 10]
+    ]
+    nodes, edges = init_graph_with_weight(graph)
+    # prim(nodes, edges)
+    d(nodes['a'])
 
