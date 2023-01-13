@@ -117,6 +117,9 @@ def d(node):
     nodes_visited.add(node)
 
     def find_next_node():
+        for key, value in distance_dict.items():
+            print(key.value, value, end='***')
+        print()
         node_distance_tuple = [[key, value] for key, value in distance_dict.items()]
         node_distance_tuple_sorted = sorted(node_distance_tuple, key=lambda x: x[1])
         for key, value in node_distance_tuple_sorted:
