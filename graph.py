@@ -99,17 +99,15 @@ def prim(nodes_dict, edges_dict):
 
 
 
-
-
-
 # 最小生成树 克鲁斯卡尔算法
-def k():
+def k(nodes_dict, edges_dict):
     pass
+
 
 
 # 迪杰斯特拉算法
 def d(node):
-    # 构造距离dict
+    # 构造距离dict []=,kio998iuj  bnhgy
     distance_dict = dict()
     nodes_visited = set()
 
@@ -156,5 +154,5 @@ if __name__ == '__main__':
     ]
     nodes, edges = init_graph_with_weight(graph)
     # prim(nodes, edges)
-    d(nodes['a'])
+    prim(nodes, edges)
 

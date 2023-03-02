@@ -1,6 +1,6 @@
 def bubble_sort(nums):
     lenn = len(nums)
-    if lenn==0 or lenn==1:
+    if lenn == 0 or lenn == 1:
         return nums
     for l in range(lenn, 0, -1):
         for index in range(0, l-1, 1):

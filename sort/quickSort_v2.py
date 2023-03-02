@@ -28,10 +28,11 @@ def swap(nums, a, b):
     nums[a], nums[b] = nums[b], nums[a]
 
 
-nums = [1, 2, 3, 5, 5, 5, 6, 7, 4, 5]
-quickSort(nums, 0, len(nums)-1)
-print(nums)
+nums1 = [9, 8, 7, 6, 5, 4, 3, 2, 1]
+nums2 = [7, 8, 9, 4, 5, 6, 1, 2, 3]
+quickSort(nums1, 0, len(nums1)-1)
+print(nums1)
 
-nums = [1, 2, 3, 5, 5, 5, 6, 7, 4, 5]
-quickSort(nums, 0, len(nums)-1)
-print(nums)
+
+quickSort(nums2, 0, len(nums2)-1)
+print(nums2)
