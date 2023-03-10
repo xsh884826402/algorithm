@@ -1,7 +1,7 @@
 def insertion_sort(nums):
     lenn = len(nums)
-    # if lenn==0 or lenn == 1:
-    #     return nums
+    if lenn==0 or lenn == 1:
+        return nums
 
     for l in range(2, lenn+1):
         for index in range(l-1, 0, -1):

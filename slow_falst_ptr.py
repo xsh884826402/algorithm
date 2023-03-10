@@ -43,6 +43,12 @@ def find_mid_node_v2(root):
             slow = slow.next
             fast = fast.next.next
 
+    # while fast.right and fast.right.right:
+    #     slow = slow.next
+    #     fast = fast.next.next
+    # return slow if fast.right else slow.right
+
+
 
 mid = find_mid_node_v2(nodes[0])
 print(mid.val)

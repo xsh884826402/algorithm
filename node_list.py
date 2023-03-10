@@ -1,7 +1,5 @@
 # 单链表反转
 # 双向链表反转
-
-
 class Node:
     def __init__(self, val):
         self.val = val
