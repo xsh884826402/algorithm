@@ -1,26 +1,3 @@
-def find_subsequence(nums, n):
-    l = 2
-    r = n-1
-    while l < r:
-        if nums[l] == 'b':
-            if nums[l-1]=='a':
-                return True
-            else:
-                l += 1
-        if nums[r] == 'a':
-            if nums[r+1]=='b':
-                return True
-            else:
-                r -= 1
-    mid = l
-    if nums[mid]=='a':
-        if nums[mid+1]=='b':
-            return True
-    else:
-        if nums[mid-1]=='a':
-            return True
-    return False
-
 def find_subsequnce(nums, n):
     l = 1
     r = n-1
@@ -82,11 +59,11 @@ def find_subsequnce(nums, n):
 # 时间复杂度分析
 ## worst time:(bbbbbaaaa) n-1 [bbbaa] n-2+1 n-1 T(n) = O(n)
 ## averge time:
-    'aaaaabbbb'
-        assume L contain 'ab' subsequence P,P/((n-1)/2) (not contain 1-P)
-        key operation : I
-        T(n) = (1-P)[时间成本]+P*[时间成本]
-             = （1-P）
+    # 'aaaaabbbb'
+    #     assume L contain 'ab' subsequence P,P/((n-1)/2) (not contain 1-P)
+    #     key operation : I
+    #     T(n) = (1-P)[时间成本]+P*[时间成本]
+    #          = （1-P）
 
 
 if __name__ == '__main__':
