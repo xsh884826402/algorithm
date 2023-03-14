@@ -28,6 +28,7 @@ class UnionFind:
             self.father_dict[x] = x
             self.count_dict[x] = 1
 
+
 # leetcode 547 省份数量
 def findCircleNum(nums):
     unionFind = UnionFind()
